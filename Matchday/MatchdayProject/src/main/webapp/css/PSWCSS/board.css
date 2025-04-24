@@ -1,0 +1,550 @@
+/* 기존 스타일 유지 */
+.font-matchday {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+    color: black;
+}
+.font-slogan {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.2em;
+}
+.logo-bg {
+    background-color: #000000;
+}
+.custom-gray {
+    background-color: #111111;
+}
+
+.faq-sidebar {
+    width: 200px;
+    background-color: black;
+    padding: 20px;
+}
+
+.faq-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faq-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.faq-sidebar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.faq-sidebar ul li a:hover,
+.faq-sidebar ul li.active a {
+    background-color: gray;
+}
+.faq-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.faq-content{
+	margin-top: 80px;
+	text-align: center;
+	width:auto;
+}
+.faq-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.faq-content p {
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+.faq-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.faq-search form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.faq-search select,
+.faq-search input,
+.faq-search button {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #444;
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+}
+
+.faq-search input {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.faq-search button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-search button:hover {
+    background-color: gray;
+}
+
+
+
+.edit-delete-buttons {
+    display: flex; /* 버튼들을 가로로 배치 */
+    gap: 10px; /* 버튼들 간의 간격 설정 */
+    font-size: 14px;
+}
+
+.edit-delete-buttons a {
+    text-decoration: none;
+    color: blue;
+    margin-right: 8px;
+}
+
+.edit-delete-buttons a:hover {
+    color: gray;
+}
+
+#top {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: auto;
+    padding: 30px;
+    color: grey;
+}
+
+/* 새로운 상세 사유 입력 칸 추가 */
+.report-form {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.report-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+.report-form button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.report-form button:hover {
+    background-color: #0056b3;
+}
+.navbar {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+}
+
+/* 네비게이션 내부 컨테이너 */
+.navbar-container {
+    max-width: 72rem; /* max-w-6xl */
+    margin: 0 auto;
+    padding: 0 1rem; /* px-4 */
+}
+
+/* 네비게이션 바 내용 정렬 */
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0; /* py-4 */
+}
+
+/* 로고 컨테이너 */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* 로고 이미지 */
+.logo-img {
+    height: 2.5rem; /* h-10 */
+}
+
+/* 브랜드 텍스트 */
+.branding {
+    margin-left: 0.75rem; /* ml-3 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 브랜드 이름 */
+.brand-title {
+    font-family: var(--font-matchday);
+    font-size: 1.25rem; /* text-xl */
+    font-weight: bold;
+    letter-spacing: 0.05em; /* tracking-wider */
+    color: black;
+}
+
+/* 슬로건 */
+.brand-slogan {
+    font-family: var(--font-slogan);
+    font-size: 0.75rem; /* text-xs */
+    color: #4B5563; /* text-gray-600 */
+}
+.nav-container {
+    display: none;
+}
+
+
+
+@media (min-width: 768px) {
+    .nav-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    .faq-search input {
+        width: 100%;
+        min-width: 0;
+    }
+    
+    .faq-search form {
+        padding: 0 15px;
+    }
+    
+    .faq-search button {
+        width: auto;
+        white-space: nowrap;
+    }
+}
+
+.nav-link {
+    font-family: var(--font-slogan);
+    font-size: 0.875rem; /* text-sm */
+    color: #4B5563; /* text-gray-700 */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #111827; /* text-gray-900 */
+}
+
+.nav-button {
+    font-family: var(--font-slogan);
+    border: 1px solid #D1D5DB; /* border-gray-300 */
+    color: #4B5563; /* text-gray-700 */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.nav-button-primary {
+    font-family: var(--font-slogan);
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button-primary:hover {
+    background-color: #1F2937; /* gray-800 */
+}.nav-container {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .nav-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+.nav-link {
+    font-family: var(--font-slogan);
+    font-size: 0.875rem; /* text-sm */
+    color: #4B5563; /* text-gray-700 */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #111827; /* text-gray-900 */
+}
+
+.nav-button {
+    font-family: var(--font-slogan);
+    border: 1px solid #D1D5DB; /* border-gray-300 */
+    color: #4B5563; /* text-gray-700 */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.nav-button-primary {
+    font-family: var(--font-slogan);
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button-primary:hover {
+    background-color: #1F2937; /* gray-800 */
+}
+
+
+/* detail 버튼항목*/
+
+.bulletin-detail {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 효과 */
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    text-align: center; /* 내용 가운데 정렬 */
+}
+
+.bulletin-detail h2, .bulletin-detail p {
+    color: #000; /* 글자 색을 검은색으로 설정 */
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+.bulletin-content p {
+    color: #333; /* 본문 내용 색상 */
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 버튼 컨테이너 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 버튼 사이 간격 */
+    margin-top: 20px;
+}
+
+/* 추천 버튼 */
+.btn-recommend {
+    background-color: #4CAF50; /* 녹색 배경 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-recommend:hover {
+    background-color: #45a049; /* 마우스 오버 시 색상 변경 */
+}
+
+/* 뒤로가기 버튼 */
+.btn-back {
+    background-color: #f1f1f1; /* 연한 회색 배경 */
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #ddd; /* 마우스 오버 시 색상 변경 */
+    border-color: #bbb;
+}
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.w-btn-indigo {
+    background-color: black;
+    color: white;
+}
+
+/* 전체적인 배경을 밝은 회색 계열로 변경 */
+body {
+    background-color: #f5f5f5; /* 밝은 회색 */
+    color: #333; /* 기본 글자 색 */
+}
+
+/* 게시판 컨테이너 스타일 수정 */
+.faq-container {
+    width: 100%;
+    max-width: 900px; /* 최대 너비 900px 제한 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 20px;
+    background: #ffffff; /* 흰색 배경 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 효과 */
+}
+
+/* 게시판 목록 스타일 */
+.faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* 각 게시물 아이템 */
+.faq-list li {
+    background: #fff; /* 흰색 배경 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    color: #222; /* 글자 색 검은색 */
+}
+
+/* 마우스 오버 효과 */
+.faq-list li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+.faq-list .post-info {
+    width: 70%; /* 일정한 너비를 설정 (조절 가능) */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 내부 요소들도 중앙 정렬 */
+}
+
+
+/* 게시물 제목 스타일 */
+.faq-list .post-info a {
+    text-decoration: none;
+    color: #222; /* 제목 검은색 */
+}
+
+/* 게시물 내용 스타일 */
+.faq-list .post-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666; /* 글씨 조금 밝게 */
+}
+
+/* 버튼 스타일 */
+.faq-list .post-actions a {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background: #007bff;
+    color: #fff; /* 버튼 글씨는 흰색 */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.faq-list .post-actions a:hover {
+    background: #0056b3;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .faq-container {
+        width: 90%;
+    }
+    .faq-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .faq-list .post-actions {
+        margin-top: 10px;
+    }
+}
+/* 버튼 스타일 감싸는 컨테이너 */
+.faq-list .post-actions {
+    margin-left: auto; /* 오른쪽 정렬 */
+    display: flex;
+    gap: 10px; /* 버튼 간격 */
+}
+
+/* 버튼 스타일 */
+.faq-list .post-actions a {
+    padding: 5px 10px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.faq-list .post-actions a:hover {
+    background: gray;
+}

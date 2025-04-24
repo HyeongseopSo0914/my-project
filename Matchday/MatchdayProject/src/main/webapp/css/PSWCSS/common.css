@@ -1,0 +1,35 @@
+/* common.css - 공통 스타일 */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --gray-color: #666666;
+    --error-color: #ff0000;
+    --success-color: #00aa00;
+    --border-color: #dddddd;
+    --background-color: #f8f8f8;
+}
+
+/* Common Font Settings */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Common Layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

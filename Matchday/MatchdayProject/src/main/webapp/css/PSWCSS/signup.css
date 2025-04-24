@@ -1,0 +1,229 @@
+/* signup.css */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --gray-color: #666666;
+    --error-color: #ff0000;
+    --success-color: #00aa00;
+    --border-color: #dddddd;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.signup-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Side */
+.left-side {
+    width: 40%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.logo-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+.slogan {
+    margin-top: 60px;
+}
+
+.slogan h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.slogan p {
+    font-family: 'Inter', sans-serif;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* Right Side */
+.right-side {
+    width: 60%;
+    padding: 40px;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-container h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.email-verification {
+    display: flex;
+    gap: 10px;
+}
+
+.email-verification input {
+    flex: 1;
+}
+
+.verify-button {
+    padding: 0 20px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.verification-input {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer {
+    color: var(--gray-color);
+}
+
+.password-rule {
+    font-size: 12px;
+    color: var(--gray-color);
+    margin-top: 4px;
+}
+
+/* Agreement Section */
+.agreement-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terms-link {
+    color: var(--gray-color);
+    text-decoration: none;
+}
+
+/* Submit Button */
+.signup-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.signup-button:hover {
+    background: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .signup-wrapper {
+        flex-direction: column;
+    }
+
+    .left-side {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .right-side {
+        width: 100%;
+    }
+
+    .slogan {
+        margin-top: 40px;
+    }
+    .slogan-image {
+        width: 100%;
+        height: 180px;  /* 높이 고정 */
+        object-fit: contain;
+        display: block;
+    }
+    
+    /* 로고 이미지와 구분하기 위해 기존 로고 이미지 클래스명도 변경 */
+    .logo-img {
+        height: 40px;
+    }
+    .image-container {
+        max-width: 100%;  /* 부모 컨테이너 너비를 넘지 않도록 */
+        margin-top: 30px;
+        overflow: hidden;  /* 이미지가 컨테이너를 벗어나지 않도록 */
+    }
+    
+}

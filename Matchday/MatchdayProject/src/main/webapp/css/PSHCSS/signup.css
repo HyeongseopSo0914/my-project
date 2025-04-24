@@ -1,0 +1,679 @@
+/* signup.css */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --gray-color: #666666;
+    --error-color: #ff0000;
+    --success-color: #00aa00;
+    --border-color: #dddddd;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%; /* 추가 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto; /* 추가 */
+    position: relative; /* 추가 */
+}
+
+
+.signup-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: calc(100vh - 40px); /* 수정 */
+    height: auto; /* 추가 */
+    background: white;
+    border-radius: 20px;
+    overflow: visible; /* 수정 */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative; /* 추가 */
+}
+
+
+/* Left Side */
+.left-side {
+    width: 40%;
+    min-height: 100%; /* 추가 */
+    height: auto; /* 추가 */
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 40px;
+    position: relative; /* 추가 */
+    display: flex; /* 추가 */
+    flex-direction: column; /* 추가 */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo img {
+    height: 40px;
+}
+
+.logo-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.logo-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+.slogan {
+    margin-top: 60px;
+}
+.slogan h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+.slogan p {
+    font-family: 'Inter', sans-serif;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+.image-container {
+    max-width: 100%;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.slogan-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Right Side */
+.right-side {
+    width: 60%;
+    min-height: 100%; /* 추가 */
+    height: auto; /* 추가 */
+    padding: 40px;
+    display: flex; /* 추가 */
+    flex-direction: column; /* 추가 */
+    overflow-y: auto; /* 추가 */
+}
+.form-container {
+    max-width: 500px;
+    width: 100%; /* 추가 */
+    margin: 0 auto;
+    display: flex; /* 추가 */
+    flex-direction: column; /* 추가 */
+    flex: 1; /* 추가 */
+}
+.form-container h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* 인증 버튼 */
+#verifyBtn {
+    padding: 0 20px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    height: 40px;
+}
+
+/* Agreement Section */
+.agreement-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+.agreement-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.agreement-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+.agreement-checkbox {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+
+/* Link */
+.terms-link,
+.privacy-link {
+    color: var(--gray-color);
+    text-decoration: underline;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+.terms-link:hover,
+.privacy-link:hover {
+    color: #000;
+}
+.privacy-link:visited,
+.terms-link:visited {
+    color: var(--gray-color);
+}
+
+
+/* Submit Button */
+.signup-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 40px;
+}
+.signup-button:hover {
+    background: #333;
+}
+.signup-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* 피드백 메시지 (닉네임 중복, 등) */
+.feedback-message {
+    margin-top: 4px;
+    font-size: 12px;
+}
+.text-success {
+    color: #059669;
+}
+.text-error {
+    color: #dc2626;
+}
+
+/* 지역 추가 버튼 */
+#add-district {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 16px;
+}
+#add-district:hover {
+    background-color: #333;
+}
+
+/* 선택된 지역 목록 */
+#selected-districts {
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+#selected-districts li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f3f4f6;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    color: #333;
+}
+.remove-district {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.remove-district:hover {
+    color: #dc2626;
+}
+.district-text {
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    margin-right: 8px;
+    display: inline-block;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* ===============================================
+   모달 (약관, 개인정보)
+   =============================================== */
+.terms-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease, display 0.3s ease;
+    pointer-events: none;
+}
+
+.terms-modal.show {
+    display: flex !important;
+    pointer-events: auto;
+    align-items: center;
+    justify-content: center;
+}
+.terms-modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+/* 모달 콘텐츠 박스 */
+.terms-modal-content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.terms-modal-content {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* 스크롤바 */
+.terms-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+.terms-modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.terms-modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+.terms-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 모달 헤더 */
+.terms-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+.terms-modal-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+}
+.close-modal {
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* 모달 본문 */
+.terms-modal-body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 모달 푸터 */
+.terms-modal-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #f0f0f0;
+    text-align: right;
+}
+.close-button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+.close-button:hover {
+    background-color: #333;
+}
+
+/* (약관/개인정보) 내용 구조 */
+.terms-content {
+    line-height: 1.6;
+    color: #333;
+}
+.terms-section {
+    margin-bottom: 40px;
+}
+.terms-chapter {
+    margin-bottom: 30px;
+}
+.terms-chapter h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0 15px;
+    color: #1a1a1a;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eee;
+}
+.terms-article {
+    margin-bottom: 25px;
+    padding-left: 15px;
+}
+.terms-article h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 0 10px;
+    color: #2d2d2d;
+}
+.terms-article p {
+    margin: 10px 0;
+    color: #4a4a4a;
+}
+.terms-article ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+.terms-article li {
+    margin: 8px 0;
+    color: #4a4a4a;
+}
+.terms-sub-article {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+.terms-sub-article p {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.terms-sub-article ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+.terms-sub-article ul li {
+    margin: 5px 0;
+    position: relative;
+}
+.terms-sub-article ul li:before {
+    content: "•";
+    position: absolute;
+    left: -15px;
+    color: #666;
+}
+
+.back-button {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    color: var(--gray-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: #f5f5f5;
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    /* 컨테이너 패딩 조정 */
+    .container {
+        padding: 0;
+    }
+
+    /* 회원가입 래퍼 */
+    .signup-wrapper {
+        flex-direction: column;
+        border-radius: 0;
+        box-shadow: none;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    /* 왼쪽 영역 최적화 */
+    .left-side {
+        width: 100%;
+        padding: 16px;
+        min-height: auto;
+    }
+
+    /* 로고 크기 조정 */
+    .logo img {
+        height: 32px;
+    }
+
+    .logo-text h1 {
+        font-size: 20px;
+    }
+
+    .logo-text p {
+        font-size: 10px;
+    }
+
+    /* 슬로건 영역 최적화 */
+    .slogan {
+        display: none;
+    }
+
+    .slogan p {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    /* 이미지 컨테이너 숨기기 */
+    .image-container {
+        display: none;
+    }
+
+    /* 오른쪽 영역 최적화 */
+    .right-side {
+        width: 100%;
+        padding: 16px;
+    }
+
+    /* 폼 컨테이너 */
+    .form-container {
+        padding: 0;
+    }
+
+    .form-container h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* 입력 필드 최적화 */
+    .input-group {
+        margin-bottom: 16px;
+    }
+
+    input, select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* 인증 버튼 크기 조정 */
+    #verifyBtn {
+        height: 36px;
+        font-size: 14px;
+    }
+
+    /* 약관 동의 영역 최적화 */
+    .agreement-group {
+        margin: 20px 0;
+        font-size: 13px;
+    }
+
+    .agreement-text {
+        font-size: 13px;
+    }
+
+    /* 지역 선택 영역 최적화 */
+    #add-district {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    #selected-districts li {
+        font-size: 13px;
+        padding: 4px 10px;
+    }
+
+    /* 모달 최적화 */
+    .terms-modal-content-wrapper {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .terms-modal-content {
+        padding: 16px;
+    }
+
+    .terms-modal-header h2 {
+        font-size: 18px;
+    }
+
+    .terms-chapter h4 {
+        font-size: 16px;
+    }
+
+    .terms-article h5 {
+        font-size: 15px;
+    }
+
+    .terms-article p,
+    .terms-article li {
+        font-size: 14px;
+    }
+
+    /* 제출 버튼 최적화 */
+    .signup-button {
+        margin-top: 24px;
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .back-button {
+        margin-top: 10px;
+        padding: 12px;
+    }
+}
+
+/* 모바일 대응 수정 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+        height: 100%; /* 추가 */
+        min-height: 100vh;
+    }
+
+    .signup-wrapper {
+        min-height: 100vh; /* 수정 */
+        height: auto;
+        flex-direction: column;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .left-side {
+        width: 100%;
+        min-height: auto; /* 수정 */
+        padding: 16px;
+    }
+
+    .right-side {
+        width: 100%;
+        min-height: auto; /* 수정 */
+        flex: 1; /* 추가 */
+        padding: 16px;
+    }
+
+    .form-container {
+        padding: 0;
+        height: auto; /* 추가 */
+    }
+}
+
+/* iOS 웹뷰 대응 */
+@supports (-webkit-touch-callout: none) {
+    .container {
+        min-height: -webkit-fill-available; /* 추가 */
+    }
+    
+    .signup-wrapper {
+        min-height: -webkit-fill-available; /* 추가 */
+    }
+}
+

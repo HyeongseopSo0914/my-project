@@ -1,0 +1,259 @@
+/* signup_optional.css */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --gray-color: #666666;
+    --light-gray: #f8f8f8;
+    --border-color: #dddddd;
+    --success-color: #00aa00;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--light-gray);
+}
+
+.signup-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Side */
+.left-side {
+    width: 40%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.logo-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+.slogan {
+    margin-top: 100px;
+}
+
+.slogan h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.slogan p {
+    font-family: 'Inter', sans-serif;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* Right Side */
+.right-side {
+    width: 60%;
+    padding: 40px;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-container h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sub-text {
+    color: var(--gray-color);
+    margin-bottom: 30px;
+}
+
+/* Game Search */
+.game-search-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.game-search {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.search-button {
+    padding: 0 20px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Selected Games */
+.selected-games {
+    margin-top: 20px;
+}
+
+.selected-game {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: var(--light-gray);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.game-header h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.remove-game {
+    background: transparent;
+    color: #ff4444;
+    border: 1px solid #ff4444;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.remove-game:hover {
+    background: #ff4444;
+    color: white;
+}
+
+/* Skill Setting */
+.skill-setting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-level {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Master Notice */
+.master-notice {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.master-notice p {
+    font-size: 14px;
+    color: var(--gray-color);
+    margin-bottom: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.skip-button {
+    flex: 1;
+    padding: 15px;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.complete-button {
+    flex: 1;
+    padding: 15px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .signup-wrapper {
+        flex-direction: column;
+    }
+
+    .left-side {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .right-side {
+        width: 100%;
+    }
+
+    .slogan {
+        margin-top: 40px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}

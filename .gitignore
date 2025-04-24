@@ -1,0 +1,90 @@
+# ----------------------------
+# Python 관련
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyo
+*.pyd
+*.so
+*.ipynb_checkpoints/
+*.log
+*.sqlite3
+*.db
+.env
+.venv/
+venv/
+Pipfile.lock
+poetry.lock
+
+# ----------------------------
+# Java / JSP / Eclipse / IntelliJ
+# ----------------------------
+*.class
+*.jar
+*.war
+*.ear
+target/
+bin/
+out/
+*.iml
+.idea/
+.settings/
+.project
+.classpath
+.gradle/
+build/
+
+# ----------------------------
+# Node.js (사용할 경우)
+# ----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ----------------------------
+# VS Code & 에디터 설정
+# ----------------------------
+.vscode/
+.history/
+*.sublime-workspace
+*.sublime-project
+
+# ----------------------------
+# 운영체제 및 숨김파일
+# ----------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ----------------------------
+# Git 관련 (기타)
+# ----------------------------
+*.orig
+*.rej
+
+# ----------------------------
+# 문서/데이터 관련 (선택적으로 사용)
+# ----------------------------
+*.csv
+*.xlsx
+*.xls
+*.bak
+*.tmp
+
+# ----------------------------
+# 이미지 편집 및 미디어 (임시/미완성 등)
+# ----------------------------
+*.psd
+*.xcf
+*.ai
+*.mp4
+*.mov
+
+# ----------------------------
+# Jupyter 노트북 출력 제거 (선택사항)
+# ----------------------------
+**/.ipynb_checkpoints

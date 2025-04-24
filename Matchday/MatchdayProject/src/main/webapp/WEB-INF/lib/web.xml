@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+         version="4.0">
+
+    <display-name>seconddynamicproject</display-name>
+
+    <!-- 인코딩 필터 추가 -->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- JDBC 설정에 인코딩 파라미터 추가 -->
+    <context-param>
+        <param-name>jdbcDriver</param-name>
+        <param-value>com.mysql.cj.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+    <param-name>org.apache.tomcat.websocket.SSL_CONTEXT_PROPERTY</param-name>
+    <param-value>TLS</param-value>
+</context-param>
+    <context-param>
+    <param-name>jdbcUrl</param-name>
+    <param-value>jdbc:mysql://matchdaydatab.cpuqcekcu7i5.ap-northeast-2.rds.amazonaws.com:3306/matchdaydatab?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Seoul&amp;allowPublicKeyRetrieval=true&amp;useSSL=false</param-value>
+</context-param>
+
+<security-constraint>
+        <web-resource-collection>
+            <web-resource-name>WebSocket Endpoint</web-resource-name>
+            <url-pattern>/websocket/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+    <!-- 기존 설정들... -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+    </welcome-file-list>
+
+    <!-- LandingServlet 추가 -->
+<servlet>
+    <servlet-name>LandingServlet</servlet-name>
+    <servlet-class>PSH.controller.LandingServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>LandingServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+</servlet-mapping>
+
+    <servlet>
+        <servlet-name>SignupServlet</servlet-name>
+        <servlet-class>controller.SignupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignupServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    <servlet-name>CreateMeetingServlet</servlet-name>
+    <servlet-class>PSH.controller.CreateMeetingServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>CreateMeetingServlet</servlet-name>
+    <url-pattern>/create_meeting</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>DeleteAccountServlet</servlet-name>
+    <servlet-class>controller.DeleteAccountServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DeleteAccountServlet</servlet-name>
+    <url-pattern>/delete_account</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/uploads/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>ReviewServlet</servlet-name>
+    <servlet-class>PSH.controller.ReviewServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ReviewServlet</servlet-name>
+    <url-pattern>/reviews/*</url-pattern>
+</servlet-mapping>
+
+<listener>
+    <listener-class>org.apache.tomcat.websocket.server.WsContextListener</listener-class>
+</listener>
+
+<servlet>
+    <servlet-name>Websocket</servlet-name>
+    <servlet-class>org.apache.tomcat.websocket.server.WsContextListener</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>Websocket</servlet-name>
+    <url-pattern>/chat/websocket/*</url-pattern>
+</servlet-mapping>
+
+
+
+    
+
+</web-app>

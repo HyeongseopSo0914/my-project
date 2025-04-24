@@ -1,0 +1,131 @@
+/* Reset and Common Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Success Wrapper Styles */
+.success-wrapper {
+    background: #111111;
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    margin-left: 15px;
+    text-align: left;
+}
+
+.logo-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    color: white;
+}
+
+.logo-text p {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: #888;
+}
+
+/* Welcome Message Styles */
+.welcome-message {
+    margin-bottom: 40px;
+}
+
+.welcome-message h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.welcome-message p {
+    color: #888;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.primary-button, .secondary-button {
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.primary-button {
+    background-color: white;
+    color: black;
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.primary-button:hover {
+    background-color: #f0f0f0;
+}
+
+.secondary-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .success-wrapper {
+        padding: 40px 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .welcome-message h2 {
+        font-size: 28px;
+    }
+}
