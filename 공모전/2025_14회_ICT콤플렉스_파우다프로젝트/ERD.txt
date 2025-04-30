@@ -1,0 +1,65 @@
+''' 
+시스템 전체 ERD 설계
+'''
+
+# 주요 엔티티(Entity)
+
+[User]
+- user_id (PK)
+- name
+- phone_number
+- email
+- registration_date
+- preferences (JSON)
+- memo
+- last_visit (timestamp)
+- status (online/offline)
+
+[Agent]
+- agent_id (PK)
+- name
+- email
+- phone_number
+- assigned_users (Array of user_id)
+
+[VisitLog]
+- visit_id (PK)
+- user_id (FK)
+- visit_datetime
+- visited_pages (JSON)
+- keywords (JSON)
+
+[Bill]
+- bill_id (PK)
+- user_id (FK)
+- bill_status (발송 완료/예정)
+- bill_amount
+- due_date
+
+[ChatHistory]
+- chat_id (PK)
+- user_id (FK)
+- agent_id (FK)
+- message_content
+- sent_time (timestamp)
+- sender (user/agent)
+
+[Notification]
+- notification_id (PK)
+- user_id (FK)
+- content
+- sent_time
+- is_read (boolean)
+
+# 관계(Relationship)
+- Agent (1) --- (N) User
+- User (1) --- (N) VisitLog
+- User (1) --- (N) Bill
+- User (1) --- (N) ChatHistory
+- Agent (1) --- (N) ChatHistory
+- User (1) --- (N) Notification
+
+# 특이사항
+- User가 여러 명의 Agent에게 동시에 할당될 필요가 없다면 (1:1 관계), assigned_users를 제거하고 별도 테이블을 구성해야 함.
+- 선호도(preferences) 필드는 JSON 형식으로 키워드와 가중치를 저장할 수 있음.
+- 방문 기록(VisitLog)과 채팅 이력(ChatHistory)은 분석용 데이터로 사용 가능.
