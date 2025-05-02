@@ -1,0 +1,37 @@
+word2vec.kr/search
+youtube api key
+
+=>>> 12-01 NLP에서의 원-핫 인코딩(One-hot encoding)
+[Youtube API key 발급]:
+Google API Console: 유튜브 Data v3 API 키 발급
+코드: https://www.kaggle.com/code/kaiyoo88/tutorial-youtube-comments-crawling
+
+지금 할 거:
+model.wv.most_similar(“단어”) 외에도 
+model.wv.most_similar(positive=['king', 'woman'], negative=['man'])
+https://word2vec.kr/search/ 사이트와 결과 비슷하게 Word2vec 모델 문법 찾기
+주석, 코드 정리 후에 Github 커밋
+W2V CBOW, Skip-gram 이해: https://wikidocs.net/60854 
+
+“흑백요리사”, “대통령 선거” 말고, 니네가 좋아하는 데이터 수집 (API, 크롤링 등)
+캐글노트북에서 만든 W2V 다운받아서 로컬에서 로드한 후에 Web에 구현
+
+ 12-01 NLP에서의 원-핫 인코딩(One-hot encoding)
+
+ YouTube Data API 사용법
+YouTube에서 공식적으로 제공하는 API를 통해 댓글 데이터를 가져오는 방법을 안내합니다. 이 과정에서는 Google Cloud에서 API 키를 발급받아야 합니다.
+
+Python 코드 예시
+댓글을 요청하고, JSON 형식으로 받아온 데이터를 파싱(구조화된 형태로 변환)해서 pandas DataFrame으로 정리하는 코드가 포함되어 있습니다.
+
+실제 활용 예시
+특정 영상에 대해 댓글을 수집하고 이를 분석하거나 시각화하는 등의 후속 작업이 가능하도록 기초 데이터를 구축하는 데 사용됩니다.
+
+용도
+
+유튜브 댓글 감성 분석
+
+키워드 분석 또는 텍스트 마이닝
+
+머신러닝/딥러닝 모델 훈련용 데이터 수집 등
+

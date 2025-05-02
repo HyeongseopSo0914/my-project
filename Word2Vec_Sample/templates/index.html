@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Word2Vec 분석기</title>
+  <script>
+    async function analyzeKeyword() {
+      const keyword = document.getElementById('keyword').value;
+      const response = await fetch('/analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ keyword: keyword })
+      });
+
+      const data = await response.json();
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `<h3>유사한 단어</h3><ul>` +
+        data.similar.map(word => `<li>${word}</li>`).join('') +
+        `</ul>`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Word2Vec 유사 단어 분석</h1>
+  <input type="text" id="keyword" placeholder="단어 입력">
+  <button onclick="analyzeKeyword()">분석</button>
+
+  <div id="result" style="margin-top: 20px;"></div>
+</body>
+</html>
