@@ -2,7 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Word2Vec 분석기</title>
+  <title>Word2Vec 유사 단어 분석기</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <script>
     async function analyzeKeyword() {
       const keyword = document.getElementById('keyword').value;
@@ -22,11 +23,12 @@
     }
   </script>
 </head>
+
 <body>
-  <h1>Word2Vec 유사 단어 분석</h1>
-  <input type="text" id="keyword" placeholder="단어 입력">
+  <h1>Word2Vec 유사 단어 분석기</h1>
+  <input type="text" id="keyword" placeholder="예: 한국-서울+도쿄">
   <button onclick="analyzeKeyword()">분석</button>
 
-  <div id="result" style="margin-top: 20px;"></div>
+  <div id="result"></div>
 </body>
 </html>

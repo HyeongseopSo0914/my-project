@@ -4,8 +4,52 @@
 4. db에서 결과물들을 불러와서 이를 model.wv.most_.. 에 대입 및 적절한 언어모델 분석
 5. 결과물 main홈페이지 출력
 
-1. Flask 기초 웹 디비 연동  - v
-2. 유튜브 api키 받기        -
-3. 강사님 코드 리뷰         -
-4. 클롤링작업               -
+1. Flask 기초 웹 디비 연동  -   v
+2. 유튜브 api키 받기        -   v
+3. 강사님 코드 리뷰         -   v
+4. 크롤링작업               -
 5. DB save load 확인        -
+6. 전처리 + 형태소 분석     -
+7. Word2Vec 학습            -
+
+MySQL DB ─▶ DataFrame ─▶ 텍스트 정제/토큰화 ─▶ Word2Vec 훈련 ─▶ 모델 저장 / 검색
+2.
+YouTube 댓글 크롤링에는 Google Cloud의 "YouTube Data API v3" 사용이 필요
+
+
+3.
+
+크롤링 작업 구간 따로 / flask 작업 구간 따로 -o
+모델 학습은 미리하고 저장 ( .model파일)
+웹에서는 모델만 불러와서 결과만 추출 - most_similar()
+
+train_model.py      ← 오프라인에서 학습하고 Word2Vec 저장 (.model)
+       │
+       ▼
+model/word2vec.model ← 모델 파일
+       │
+       ▼
+app.py (웹 요청)
+ → load_model() → model.wv.most_similar(keyword)
+ → 결과 응답
+
+ from gensim.models import Word2Vec
+
+# 서버 시작 시 모델 한 번만 불러오기
+model = Word2Vec.load("model/word2vec.model")
+
+def get_similar_words(keyword):
+    try:
+        result = model.wv.most_similar(keyword, topn=10)
+        return [w for w, _ in result]
+    except KeyError:
+        return ["❗ 학습된 단어가 아닙니다."]
+
+from flask import Flask, render_template, request, jsonify
+from word2vec_fast import get_similar_words  # 위 함수를 따로 분리했다면
+
+@app.route('/analyze', methods=['POST'])
+def analyze():
+    keyword = request.json.get('keyword')
+    similar_words = get_similar_words(keyword)
+    return jsonify({'similar': similar_words})
