@@ -49,15 +49,15 @@ from googleapiclient.discovery  import build
 from googleapiclient.errors     import HttpError
 
 
-MAX_V=100
-MAX_C=200
-MAX_R=50
+MAX_V=100       #수집할 영상 갯수(Video count)
+MAX_C=500       #각 영상당 수집할 댓글 수의 갯수(Comment count)
+MAX_R=50        #한 페이지당 가져올수있는 최대 갯수(Request count)
 
 #API KEY 
 youtube = build("youtube","v3",developerKey=YOUTUBE_API_KEY)
 
 #1. parameter 로 들어온 channel_id 에서 T1을 포함하는 영상 ID 수집
-def get_video_id(id,query,max_results=MAX_V) :
+def get_video_id(id,max_results=MAX_V) :
     video_id = []
     next_page = None
 
@@ -65,7 +65,7 @@ def get_video_id(id,query,max_results=MAX_V) :
         try:
             request = youtube.search().list(
                 part="snippet"
-                ,q=query
+                
                 ,channelId=id
                 ,type="video"
                 ,maxResults=MAX_R
@@ -117,8 +117,8 @@ def get_comments(video_id,max_comments=MAX_C):
     return comments[:max_comments]
 
 #3. all collect
-def collect_all(channel_id,query="T1",max_videos=MAX_V,max_comments=MAX_C):
-    video_id =get_video_id(channel_id,query,max_videos)
+def collect_all(channel_id,max_videos=MAX_V,max_comments=MAX_C):
+    video_id =get_video_id(channel_id,max_videos)
     all_data = []
 
     for i in video_id:

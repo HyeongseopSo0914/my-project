@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Word2Vec 유사 단어 분석기</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <script>
-    async function analyzeKeyword() {
-      const keyword = document.getElementById('keyword').value;
-      const response = await fetch('/analyze', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ keyword: keyword })
-      });
-
-      const data = await response.json();
-      const resultDiv = document.getElementById('result');
-      resultDiv.innerHTML = `<h3>유사한 단어</h3><ul>` +
-        data.similar.map(word => `<li>${word}</li>`).join('') +
-        `</ul>`;
-    }
-  </script>
+    <meta charset="UTF-8">
+    <title>Word2Vec 검색기</title>
 </head>
-
 <body>
-  <h1>Word2Vec 유사 단어 분석기</h1>
-  <input type="text" id="keyword" placeholder="예: 한국-서울+도쿄">
-  <button onclick="analyzeKeyword()">분석</button>
+    <h1>💬 Word2Vec 유사 단어 / 벡터 연산 검색</h1>
+    <form method="post">
+        <input type="text" name="query" placeholder="예: 페이커 + 우승 - 패배" required size="40">
+        <button type="submit">검색</button>
+    </form>
 
-  <div id="result"></div>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+        <h2>🔍 "{{ input_text }}" 결과</h2>
+        <ul>
+            {% for w, score in result %}
+                <li>{{ w }} — 유사도: {{ "%.4f"|format(score) }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 </body>
 </html>

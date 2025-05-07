@@ -1,3 +1,8 @@
 dotenv
 mysql-connector-python
 google-api-python-client
+pandas
+konlpy
+gensim
+python-mecab-ko
+flask

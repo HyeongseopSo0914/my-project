@@ -3,14 +3,13 @@ from db import get_connection
 import pandas as pd
 
 # 설정
-CHANNEL_ID = "UCw1DsweY9b2AKGjV4kGJP1A"
-QUERY = "T1"
-CSV_PATH = "t1_comments.csv"
+CHANNEL_ID = "UCw1DsweY9b2AKGjV4kGJP1A"  # LCK 공식 채널
+CSV_PATH = "lck_comments.csv"           # 파일명도 T1 → LCK로 변경
 
 # 1. 댓글 수집 및 CSV 저장
 def crawl_and_save_csv():
     print("📥 유튜브 댓글 수집 중...")
-    df = collect_all(CHANNEL_ID, query=QUERY)
+    df = collect_all(CHANNEL_ID)  # query 제거됨
     if df.empty:
         print("❌ 수집된 데이터가 없습니다.")
         return None
@@ -37,7 +36,7 @@ def save_df_to_db(df):
     conn.close()
     print("✅ DB 저장 완료")
 
-# 실행 스크립트
+# 실행
 if __name__ == "__main__":
     df = crawl_and_save_csv()
     if df is not None:
