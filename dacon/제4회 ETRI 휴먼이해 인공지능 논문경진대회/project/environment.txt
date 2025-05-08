@@ -1,3 +1,0 @@
-OS: Windows 11
-Python : 3.11.11
-VS Code Version: 1.79.2
