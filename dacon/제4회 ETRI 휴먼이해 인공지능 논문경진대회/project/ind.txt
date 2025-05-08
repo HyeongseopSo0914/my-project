@@ -1,0 +1,13 @@
+project/
+│
+├── /data/                  # 실제 데이터 파일 위치 (예: train.csv, test.csv 등)
+├── /models/                # 저장된 모델 가중치 파일 (선택적)
+├── /notebooks/
+│   └── main.ipynb          # 실행 가능한 주 분석 및 모델링 노트북
+├── /src/
+│   └── model.py            # 모델 정의 코드 (함수 or 클래스)
+│   └── utils.py            # 데이터 전처리, 시각화 등 유틸 함수
+├── requirements.txt        # 필요 라이브러리 명시
+├── environment.txt         # OS 및 라이브러리 버전 포함
+├── README.md               # 프로젝트 설명서
+└── model_description.txt   # 모델 구조 및 특징 정리 (자유 양식)
