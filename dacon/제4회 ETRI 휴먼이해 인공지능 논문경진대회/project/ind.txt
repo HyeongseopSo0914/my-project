@@ -11,3 +11,53 @@ project/
 ├── environment.txt         # OS 및 라이브러리 버전 포함
 ├── README.md               # 프로젝트 설명서
 └── model_description.txt   # 모델 구조 및 특징 정리 (자유 양식)
+
+모든 값은 범주형 클래스 집합 --- 분류 문제
+| 타깃 컬럼 | 값       | 예측 타입     | 설명             |
+| ----- | ------- | --------- | -------------- |
+| `Q1`  | 0 or 1  | 이진 분류     | 수면의 질 (좋다/나쁘다) |
+| `Q2`  | 0 or 1  | 이진 분류     | 피로도 (높다/낮다)    |
+| `Q3`  | 0 or 1  | 이진 분류     | 스트레스 (있다/없다)   |
+| `S1`  | 0, 1, 2 | 다중 클래스 분류 | 총 수면시간 등급      |
+| `S2`  | 0 or 1  | 이진 분류     | 수면 효율 (좋다/나쁘다) |
+| `S3`  | 0 or 1  | 이진 분류     | 수면 지연 있음/없음    |
+
+
+앞으로 해야 될 것
+1. 데이터 전처리 ( 하루 기준 )
+ch2025_mACStatus.parquet  ch2025_mGps.parquet		ch2025_mWifi.parquet
+ch2025_mActivity.parquet  ch2025_mLight.parquet		ch2025_wHr.parquet
+ch2025_mAmbience.parquet  ch2025_mScreenStatus.parquet	ch2025_wLight.parquet
+ch2025_mBle.parquet	  ch2025_mUsageStats.parquet	ch2025_wPedo.parquet
+-----
+1. 데이터 확인
+2. 목표 확인 -- 성공률 예측
+3. 결측치 확인 및 처리
+4. EDA (시각화 포함한 탐색적 분석)
+5. 컬럼별 분석 + 이상치 탐색
+6. 데이터 라벨링 및 불리언화
+7. 필요없는 컬럼 제거
+8. Feature Engineering (파생변수 생성)
+9. Feature Importance / 상관 분석
+10. 검증 전략 설정 (KFold 등)
+11. 모델 선택 및 학습
+12. 하이퍼파라미터 튜닝
+13. 최종 모델 선정
+14. 결과 예측 및 저장
+15. 평가 지표 확인 및 대회 제출
+--
+너무 좋습니다. 센서 데이터는 원래 시계열이지만,
+→ 머신러닝에 넣기 위해선 보통 "하루 단위로 요약"합니다.
+
+이미 예시가 준비된 센서:
+mACStatus → 충전 비율, 충전 지속 시간 등
+
+mActivity → 활동 비율, 대표 활동 등
+
+다음으로 준비하면 좋을 센서들:
+센서 이름	요약 피처 예시
+wHr (심박수)	평균/최대/최소/표준편차, 심박 상승 횟수
+wPedo (걸음 수)	총 걸음 수, 활동 시간대, 밤 시간대 걸음 수
+mLight / wLight (조도)	평균 밝기, 수면 직전 조도 변화량
+mScreenStatus	화면 켜짐 횟수, 총 사용 시간, 밤 시간대 사용 여부
+mUsageStats	앱 사용 총 시간, 상위 앱 사용 비율 등
