@@ -1,6 +1,9 @@
 git rm -r --cached .   # 캐시 전체삭제
 
 
+git reflog expire --expire=now --all        #Git 쓰레기 수집
+git gc --prune=now --aggressive             #Git 쓰레기 정리
+
 
 
 ---- .gitignore ----
