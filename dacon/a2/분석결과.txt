@@ -1,0 +1,9 @@
+#오후 5:36 2025-04-29 기준 결과#
+Early stopping occurred at epoch 48 with best_epoch = 38 and best_val_0_mae = 0.2075
+Early stopping occurred at epoch 35 with best_epoch = 25 and best_val_0_mae = 0.20796
+Early stopping occurred at epoch 46 with best_epoch = 36 and best_val_0_mae = 0.20338
+Early stopping occurred at epoch 33 with best_epoch = 23 and best_val_0_mae = 0.20364
+Early stopping occurred at epoch 55 with best_epoch = 45 and best_val_0_mae = 0.20531
+1. 평균 CV Score (MAE): 0.20556
+2. 추정 Leaderboard 점수(예측 평균 기준): 0.02790
+3. 현재 모델은 성능 안정성과 일반화 측면에서 우수하여 후속 스태킹 기반 모델에 적합합니다.
