@@ -35,3 +35,33 @@ Python 코드 예시
 
 머신러닝/딥러닝 모델 훈련용 데이터 수집 등
 
+
+
+일단 vscode기반 작업으로 시작을할거야
+1. flask기반 웹사이트작업 (word2vec 홈페이지처럼)
+2. flask와 연동된 python 파일작업 ( 데이터전처리, 함수, api키연동.. 코드분리화해서 각각 파일작업 및 git에올릴땐 config제외 )
+3. 크롤링에서 나온 결과물을 mysql 로컬DB에 저장 후 이거랑 연동
+4. db에서 결과물들을 불러와서 이를 model.wv.most_.. 에 대입 및 적절한 언어모델 분석
+5. 결과물 main홈페이지 출력
+
+app.py : Flask 엔트리포인트
+
+preprocess.py : 댓글 정제 및 형태소 분석 함수
+
+crawler.py : YouTube API 연동 및 댓글 수집
+
+model.py : Word2Vec 모델 로딩 및 분석 함수
+
+db.py : MySQL 연결 및 쿼리 처리 함수
+
+config.py : API Key, DB 설정값 (Git에 올릴 땐 .gitignore로 제외)
+
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    video_id VARCHAR(50),
+    comment_text TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+자바 : 서블릿
+파이썬 : 라우트
