@@ -92,6 +92,7 @@ $RECYCLE.BIN/
 # ----------------------------
 # test/ train/ open.zip 제거
 # ----------------------------
+*.zip
 open.zip
 test/
 train/
