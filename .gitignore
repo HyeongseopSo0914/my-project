@@ -103,11 +103,13 @@ train/
 #config.py
 
 # 📁 데이터 폴더 전체 무시 (현재 폴더명 예시 기준)
-project/data/
+# 데이터 전체 폴더 무시 (하위 parquet, zip 포함)
 dacon/
+project/data/
 *.zip
 *.parquet
 *.feather
+
 
 
 
