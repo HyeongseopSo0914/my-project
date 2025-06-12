@@ -1,0 +1,19 @@
+advanced project 
+팀명 : 하루하루
+주제 : 챗봇개발
+세부주제 : 4개의 큰 주제에 대한 정보전달용 자연어 봇 제작(축제정보, 스팀게임정보, 주식, 게임 아이템 경매장)
+
+역할분담
+소형섭 : nlu엔진 및 intent 핸들러
+최주호 : 공공데이터api 수집 
+전현준 : 백엔드
+정원민 : 학습용 데이터 제작 및 qa
+신제윤 : 프론트엔드 제작 및 qa
+
+기술스택
+프론트엔드: JavaScript, React
+백엔드: Python (fastapi, uvicorn 사용)
+NLU 엔진: Python 기반 intent 분류기 직접 구현
+데이터 수집: Python (공공데이터 API 활용)
+QA 및 학습용 데이터: JSON, Pandas
+협업 도구: GitHub, discord, kakaotalk

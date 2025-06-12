@@ -1,0 +1,13 @@
+python-dotenv
+mysqlclient
+sqlalchemy
+langchain
+langchain_community
+langchain-experimental
+openai
+google-generativeai
+vertexai
+sentence-transformers
+transformers
+torch
+requests
